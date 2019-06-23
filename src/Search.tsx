@@ -30,7 +30,7 @@ export default class Search extends React.Component <IProps & { className: strin
     }
 
     public fetchWeather = () => {
-        request.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.searchedCity}&appid=${API_KEY}&units=metric`)
+        request.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.searchedCity}&appid=${API_KEY}&units=metric`)
             .then(res => {
                 // console.log(res)
                 const data: any = res.body   
