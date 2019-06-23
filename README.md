@@ -1,4 +1,4 @@
-![alt text](public/images/weatherapp.png)
+![alt text](public/weatherapp.png)
 
 
 [Live Demo Here](https://weather-app-proto.herokuapp.com/).
