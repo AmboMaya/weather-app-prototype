@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react'
+import { IWeatherData } from './types'
 import './App.css';
+import Search from './Search'
+import WeatherDetails from './WeatherDetails'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface IState {
+  weather:IWeatherData | null
 }
 
-export default App;
+class App extends React.Component< {}, IState> {
+  public readonly state: Readonly<IState> = {
+    weather: null
+  }
+
+  public setWeatherDetails = (weather: IWeatherData) : any => {
+    this.setState ({weather})
+  }
+
+  public render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Search weather for your city</h1>
+        </header>
+        <Search className='searchField' onWeatherLoaded={this.setWeatherDetails}/>
+        {this.state.weather ? 
+          <WeatherDetails 
+            weather={this.state.weather}
+              /> 
+            : null 
+        }
+      </div>
+    );
+  }
+}
+
+export default App
