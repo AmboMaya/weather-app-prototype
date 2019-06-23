@@ -13,7 +13,7 @@ class WeatherDetails extends Component <IProps> {
 		<React.Fragment>
 			<div className='weatherDetails'>
 				<h4>Weather Details</h4>
-				<p>{this.props.weather.city}, {this.props.weather.country} <img src={`http://openweathermap.org/img/w/${this.props.weather.icon}.png`} alt='weather icon'/></p>
+				<p>{this.props.weather.city}, {this.props.weather.country} <img src={`https://openweathermap.org/img/w/${this.props.weather.icon}.png`} alt='weather icon'/></p>
 				<table>
 					<thead>
 						<tr >
